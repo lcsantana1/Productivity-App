@@ -36,4 +36,10 @@ function App() {
   ]);
 }
 
+//adding todo's
+const addTodo = text => {
+  const newTodos = [...todos, { text }];
+  setTodos(newTodos);
+};
+
 export default App;
