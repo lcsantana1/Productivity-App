@@ -26,4 +26,14 @@ function App() {
   );
 }
 
+// contains all the todos and whether they are done or not
+function App() {
+  const [todos, setTodos] = React.useState([
+    {
+      text: "This is a sampe todo",
+      isDone: false
+    }
+  ]);
+}
+
 export default App;
