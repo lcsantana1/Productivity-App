@@ -42,4 +42,43 @@ const addTodo = text => {
   setTodos(newTodos);
 };
 
+//mark todo function
+const markTodo = index => {
+  const newTodos = [...todos];
+  newTodos[index].isDone = true;
+  setTodos(newTodos);
+};
+
+//deleting the todo's
+const removeTodo = index => {
+  const newTodos = [...todos];
+  newTodos.splice(index, 1);
+  setTodos(newTodos);
+};
+
+//returning the JSX rendering -using a form todo component
+return (
+  <div className="app">
+    <div className="container">
+      <h1 className="text-center mb-4">Todo List</h1>
+      <FormTodo addTodo={addTodo} />
+      <div>
+        {todos.map((todo, index) => (
+          <Card>
+            <Card.Body>
+              <Todo
+              key={index}
+              index={index}
+              todo={todo}
+              markTodo={markTodo}
+              removeTodo={removeTodo}
+              />
+            </Card.Body>
+          </Card>
+        ))}
+      </div>
+    </div>
+  </div>
+);
+
 export default App;
