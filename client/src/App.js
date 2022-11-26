@@ -1,61 +1,19 @@
-import React from "react";
+import React, { useState } from 'react';
 import { Button, Card, Form } from 'react-bootstrap';
+import FormTodo from "./components/FormTodo";
+import Todo from "./components/Todo";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-// function App() {
-//   return (
-//     <TodoList />
-//   )
-// }
-function Todo({ todo, index, markTodo, removeTodo }) {
-  return (
-    <div
-      className="todo"
-      
-    >
-      <span style={{ textDecoration: todo.isDone ? "line-through" : "" }}>{todo.text}</span>
-      <div>
-        <Button variant="outline-success" onClick={() => markTodo(index)}>✓/completed</Button>{' '}
-        <Button variant="outline-danger" onClick={() => removeTodo(index)}>✕/remove</Button>
-      </div>
-    </div>
-  );
-}
-
-function FormTodo({ addTodo }) {
-  const [value, setValue] = React.useState("");
-
-  const handleSubmit = e => {
-    e.preventDefault();
-    if (!value) return;
-    addTodo(value);
-    setValue("");
-  };
-
-  return (
-    <Form onSubmit={handleSubmit}> 
-    <Form.Group>
-      <Form.Label><b>Productivity</b></Form.Label>
-      <Form.Control type="text" className="input" value={value} onChange={e => setValue(e.target.value)} placeholder="Add to Daily List" />
-    </Form.Group>
-    <Button variant="primary mb-3" type="submit">
-      SUBMIT
-    </Button>
-  </Form>
-  );
-}
+// TODO: create user login ability
+// TODO: create the backend to capture all of this data. that goes in your server folder...use the MERN challenge(challenge 21) to help you structure your backend. 
 
 function App() {
-  const [todos, setTodos] = React.useState([
-    {
-      text: "This is a daily list",
-      isDone: false
-    }
-  ]);
+  const [todos, setTodos] = useState([]);
 
   const addTodo = text => {
     const newTodos = [...todos, { text }];
     setTodos(newTodos);
+    // save this data in the database
   };
 
   const markTodo = index => {
