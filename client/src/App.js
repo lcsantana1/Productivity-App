@@ -8,18 +8,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // TODO: create the backend to capture all of this data. that goes in your server folder...use the MERN challenge(challenge 21) to help you structure your backend. 
 
 function App() {
- const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState([]);
 
- const addTodo = text => {
-   const newTodos = [...todos, { text }];
-   setTodos(newTodos);
+  const addTodo = text => {
+    const newTodos = [...todos, { text }];
+    setTodos(newTodos);
     // save this data in the database
   };
 
   const markTodo = index => {
     const newTodos = [...todos];
     newTodos[index].isDone = true;
-   setTodos(newTodos);
+    setTodos(newTodos);
   };
 
   const removeTodo = index => {
@@ -30,62 +30,71 @@ function App() {
 
   return (
    <div className="app">
-     <div className="container">
-       <h1 className="text-center mb-4">Productivity App</h1>
-       <h4 className="text-center mb-4">Daily Tasks</h4>
-        <FormTodo addTodo={addTodo} />
-        <div>
-         {todos.map((todo, index) => (
-           <Card>
-             <Card.Body>
-               <Todo
-                key={index}
-                index={index}
-                todo={todo}
-                markTodo={markTodo}
-                removeTodo={removeTodo}
-                />
-              </Card.Body>
-            </Card>
-          ))}
-        </div>
-        <h4 className="text-center mb-4">Weekly Tasks</h4>
-        <FormTodo addTodo={addTodo} />
-        <div>
-         {todos.map((todo, index) => (
-           <Card>
-             <Card.Body>
-               <Todo
-                key={index}
-                index={index}
-                todo={todo}
-                markTodo={markTodo}
-                removeTodo={removeTodo}
-                />
-              </Card.Body>
-            </Card>
-          ))}
-        </div>
-        <h4 className="text-center mb-4">Monthly Tasks</h4>
-        <FormTodo addTodo={addTodo} />
-        <div>
-         {todos.map((todo, index) => (
-           <Card>
-             <Card.Body>
-               <Todo
-                key={index}
-                index={index}
-                todo={todo}
-                markTodo={markTodo}
-                removeTodo={removeTodo}
-                />
-              </Card.Body>
-            </Card>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+   <div className="container">
+     <h1 className="text-center mb-4">Productivity App</h1>
+     <h4 className="text-center mb-4">Daily Tasks</h4>
+     <FormTodo addTodo={addTodo} />
+     <div>
+       {todos.map((todo, index) => (
+         <Card>
+           <Card.Body>
+             <Todo
+               key={index}
+               index={index}
+               todo={todo}
+               markTodo={markTodo}
+               removeTodo={removeTodo}
+             />
+           </Card.Body>
+         </Card>
+       ))}
+     </div>
+     <h4 className="text-center mb-4">Weekly Tasks</h4>
+     <FormTodo addTodo={addTodo} />
+     <div>
+       {todos.map((todo, index) => (
+         <Card>
+           <Card.Body>
+             <Todo
+               key={index}
+               index={index}
+               todo={todo}
+               markTodo={markTodo}
+               removeTodo={removeTodo}
+             />
+           </Card.Body>
+         </Card>
+       ))}
+     </div>
+     <h4 className="text-center mb-4">Monthly Tasks</h4>
+     <FormTodo addTodo={addTodo} />
+     <div>
+       {todos.map((todo, index) => (
+         <Card>
+           <Card.Body>
+             <Todo
+               key={index}
+               index={index}
+               todo={todo}
+               markTodo={markTodo}
+               removeTodo={removeTodo}
+             />
+           </Card.Body>
+         </Card>
+       ))}
+     </div>
+   </div>
+ </div>
+   
+ );
+
+
+
+
+
+
+
+
 }
 
 
