@@ -32,6 +32,7 @@ function App() {
    <div className="app">
      <div className="container">
        <h1 className="text-center mb-4">Productivity App</h1>
+       <h4 className="text-center mb-4">Daily Tasks</h4>
         <FormTodo addTodo={addTodo} />
         <div>
          {todos.map((todo, index) => (
@@ -48,6 +49,7 @@ function App() {
             </Card>
           ))}
         </div>
+        <h4 className="text-center mb-4">Weekly Tasks</h4>
         <FormTodo addTodo={addTodo} />
         <div>
          {todos.map((todo, index) => (
@@ -64,6 +66,7 @@ function App() {
             </Card>
           ))}
         </div>
+        <h4 className="text-center mb-4">Monthly Tasks</h4>
         <FormTodo addTodo={addTodo} />
         <div>
          {todos.map((todo, index) => (
