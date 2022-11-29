@@ -48,6 +48,38 @@ function App() {
             </Card>
           ))}
         </div>
+        <FormTodo addTodo={addTodo} />
+        <div>
+         {todos.map((todo, index) => (
+           <Card>
+             <Card.Body>
+               <Todo
+                key={index}
+                index={index}
+                todo={todo}
+                markTodo={markTodo}
+                removeTodo={removeTodo}
+                />
+              </Card.Body>
+            </Card>
+          ))}
+        </div>
+        <FormTodo addTodo={addTodo} />
+        <div>
+         {todos.map((todo, index) => (
+           <Card>
+             <Card.Body>
+               <Todo
+                key={index}
+                index={index}
+                todo={todo}
+                markTodo={markTodo}
+                removeTodo={removeTodo}
+                />
+              </Card.Body>
+            </Card>
+          ))}
+        </div>
       </div>
     </div>
   );
