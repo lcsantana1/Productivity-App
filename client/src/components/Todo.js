@@ -3,8 +3,6 @@ import { Form, Button } from 'react-bootstrap'
 
 export default function Todo({ todo, index, markTodo, removeTodo }) {
 
-//   create the fuctionality to capture the content of the todo..DONE
-
 // use your mongo database to store the todo and the date when the todo is created and create a due date. 
 
     return (
@@ -18,5 +16,16 @@ export default function Todo({ todo, index, markTodo, removeTodo }) {
          <Button variant="outline-danger" onClick={() => removeTodo(index)}>✕/remove</Button>
        </div>
       </div>
+
+      
     );
+
+    // return (
+    //   <div
+    //   className="todoo"
+
+    //   >
+
+    // )
+     
  }

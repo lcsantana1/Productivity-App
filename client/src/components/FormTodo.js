@@ -2,16 +2,16 @@ import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap'
 
 export default function FormTodo({ addTodo }) {
- const [value, setValue] = useState("");
+    const [value, setValue] = useState("");
 
- const handleSubmit = e => {
-   e.preventDefault();
-   if (!value) return;
-   addTodo(value);
-   setValue("");
- };
+    const handleSubmit = e => {
+        e.preventDefault();
+        if (!value) return;
+        addTodo(value);
+        setValue("");
+    };
 
-  return (
+    return (
    <Form onSubmit={handleSubmit}>
      <Form.Group>
        <Form.Label><b>Productivity</b></Form.Label>
@@ -21,5 +21,5 @@ export default function FormTodo({ addTodo }) {
        SUBMIT
      </Button>
        </Form>
- );
+    );
 }
