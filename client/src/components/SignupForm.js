@@ -26,6 +26,8 @@ const SignupForm = () => {
       setShowAlert(true);
     } else {
       setShowAlert(false);
+
+      
     }
   }, [error]);
 
